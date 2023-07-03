@@ -1,0 +1,70 @@
+
+*,*::after,*::before{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-weight: 400;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  background: rgb(0, 2, 15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+	perspective: 900px;
+}
+.ctn{
+  width: 300px;
+  height: 300px;
+  position:relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+  transform: translateY(-100px) rotateX(90deg);
+	animation: girar 5s infinite linear;
+}
+.ctn div{
+  background:url(./fondo.png);
+  background-size: 1000px 1500px;
+  background-position: center bottom;
+	animation: fondo 3s infinite  alternate steps(45);
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+.face1{
+  transform: translateZ(51px) rotateX(20deg);
+}
+.face2{
+  transform: rotateY(59.1deg) translateX(-7px) rotateX(-15deg) rotateZ(3.2deg) translateZ(-36.75px) translateY(13.5px);
+}
+.face3{
+  transform: rotateY(-59.1deg) translateX(7px) rotateX(-15deg) rotateZ(-3.2deg) translateZ(-36.75px) translateY(13.5px);
+}
+.face4{
+  height: 257px !important;
+  transform: rotateX(93.5deg) translateZ(-146px) translateY(-35px);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+@keyframes girar {
+  from {
+    transform: rotateY(0deg) rotateX(0deg);
+  }
+  
+  to {
+    transform: rotateY(360deg) rotateX(360deg);
+  }
+}
+@keyframes fondo{
+  from {
+    background-position: center bottom;
+  }
+  
+  to {
+    background-position: center top;
+  }
+}
